@@ -11,8 +11,7 @@ class EmailParser
     end
 
 def parse
-  new = emails.split(/[,\s?]/).uniq.compact
-
+  new = emails.split(/[,\s?]/).uniq.delete_if {|item| item == ""}
   new
 end
 
